@@ -1,0 +1,243 @@
+/* =========================
+   COLOR PALETTE
+   ========================= */
+
+:root {
+    --teal: #3d5b59;
+    --salmon: #fcb5ac;
+    --cream: #fff9f6;
+    --dark-teal: #294341;
+}
+
+
+/* =========================
+   BASE
+   ========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cream);
+    color: var(--teal);
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+header {
+    background: var(--cream);
+}
+
+.navbar {
+    max-width: 1300px;
+    margin: auto;
+    padding: 28px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--teal);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--teal);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+}
+
+.nav-links a:hover {
+    color: var(--salmon);
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+    min-height: 78vh;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    max-width: 1300px;
+    margin: auto;
+}
+
+.hero-content {
+    background: var(--salmon);
+    padding: 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    font-weight: normal;
+    line-height: 0.85;
+
+    margin-bottom: 35px;
+}
+
+.hero h1 span {
+    color: var(--cream);
+}
+
+.hero-description {
+    max-width: 620px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   HERO BUTTONS
+   ========================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.button {
+    padding: 14px 24px;
+
+    text-decoration: none;
+    font-size: 0.85rem;
+
+    border: 2px solid var(--teal);
+
+    transition: 0.2s;
+}
+
+.primary {
+    background: var(--teal);
+    color: var(--cream);
+}
+
+.primary:hover {
+    background: var(--dark-teal);
+}
+
+.secondary {
+    color: var(--teal);
+}
+
+.secondary:hover {
+    background: var(--teal);
+    color: var(--cream);
+}
+
+
+/* =========================
+   HERO SIDE PANEL
+   ========================= */
+
+.hero-accent {
+    background: var(--teal);
+    color: var(--salmon);
+
+    padding: 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.hero-accent p {
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 1;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    max-width: 1300px;
+    margin: auto;
+
+    padding: 35px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 0.8rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--teal);
+    text-decoration: none;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 850px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        min-height: 70vh;
+    }
+
+    .hero-accent {
+        min-height: 300px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
