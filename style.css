@@ -1,18 +1,17 @@
-/* =========================
-   COLOR PALETTE
-   ========================= */
+/* =========================================================
+   ADITI BHAT — PORTFOLIO
+   ========================================================= */
 
 :root {
     --teal: #3d5b59;
-    --salmon: #fcb5ac;
-    --cream: #fff9f6;
+    --pink: #fcb5ac;
     --dark-teal: #294341;
 }
 
 
-/* =========================
-   BASE
-   ========================= */
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -25,351 +24,667 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--cream);
+    font-family: Helvetica, Arial, sans-serif;
+    background: var(--pink);
     color: var(--teal);
-    line-height: 1.5;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
 }
 
 
-/* =========================
+/* =========================================================
    NAVIGATION
-   ========================= */
+   ========================================================= */
 
 header {
-    background: var(--cream);
+    background: var(--teal);
+    width: 100%;
 }
 
 .navbar {
     max-width: 1300px;
-    margin: auto;
-    padding: 28px 5%;
+    margin: 0 auto;
+    padding: 25px 5%;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-}
-
-.logo {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--teal);
-    text-decoration: none;
 }
 
 .nav-links {
     display: flex;
-    gap: 28px;
     align-items: center;
+    gap: 30px;
 }
 
 .nav-links a {
-    color: var(--teal);
+    color: var(--pink);
     text-decoration: none;
-    font-size: 0.85rem;
+
+    font-size: 0.82rem;
+    font-weight: 500;
     letter-spacing: 0.04em;
-    transition: color 0.2s ease;
+
+    transition: opacity 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: var(--salmon);
+    opacity: 0.65;
 }
 
 
-/* =========================
-   HERO
-   ========================= */
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+.eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   HOME HERO
+   ========================================================= */
 
 .hero {
-    min-height: 78vh;
-
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-
-    max-width: 1300px;
-    margin: auto;
+    width: 100%;
+    background: var(--teal);
 }
 
 .hero-content {
-    background: var(--salmon);
-    padding: 10%;
+    max-width: 1300px;
+    min-height: 72vh;
+
+    margin: 0 auto;
+    padding: 90px 5% 110px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
 
-.eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-    margin-bottom: 30px;
+    color: var(--pink);
 }
 
 .hero h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(4rem, 8vw, 7.5rem);
-    font-weight: normal;
-    line-height: 0.85;
-    margin-bottom: 35px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(4.5rem, 9vw, 8.5rem);
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    line-height: 0.88;
+
+    margin-bottom: 40px;
 }
 
 .hero h1 span {
-    color: var(--cream);
+    color: var(--pink);
 }
 
 .hero-description {
-    max-width: 620px;
-    font-size: 1.1rem;
+    max-width: 680px;
+
+    font-size: 1.15rem;
+    font-weight: 400;
     line-height: 1.7;
 }
 
 
-/* =========================
-   HERO BUTTONS
-   ========================= */
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 
 .hero-buttons {
-    display: flex;
-    gap: 15px;
     margin-top: 35px;
 }
 
 .button {
+    display: inline-block;
+
     padding: 14px 24px;
 
     text-decoration: none;
-    font-size: 0.85rem;
 
-    border: 2px solid var(--teal);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+
+    border: 2px solid var(--pink);
 
     transition:
         background 0.2s ease,
         color 0.2s ease;
 }
 
-.primary {
-    background: var(--teal);
-    color: var(--cream);
-}
-
-.primary:hover {
-    background: var(--dark-teal);
-}
-
-.secondary {
+.hero .primary {
+    background: var(--pink);
     color: var(--teal);
+}
+
+.hero .primary:hover {
     background: transparent;
+    color: var(--pink);
 }
 
-.secondary:hover {
+.page-header .primary {
     background: var(--teal);
-    color: var(--cream);
+    color: var(--pink);
+    border-color: var(--teal);
+}
+
+.page-header .primary:hover {
+    background: transparent;
+    color: var(--teal);
 }
 
 
-/* =========================
-   HERO SIDE PANEL
-   ========================= */
-
-.hero-accent {
-    background: var(--teal);
-    color: var(--salmon);
-
-    padding: 10%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-
-    overflow: hidden;
-}
-
-.hero-accent p {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2rem, 3.3vw, 3.4rem);
-    line-height: 1;
-}
-
-
-/* =========================
-   SELECTED WORK
-   ========================= */
+/* =========================================================
+   HOME — SELECTED WORK
+   ========================================================= */
 
 .selected-work {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 120px 5%;
+    padding: 110px 5% 130px;
+
+    background: var(--pink);
 }
-
-
-/* =========================
-   SECTION HEADING
-   ========================= */
 
 .section-heading {
-    margin-bottom: 60px;
-}
-
-.section-heading .eyebrow {
-    margin-bottom: 20px;
+    margin-bottom: 65px;
 }
 
 .section-heading h2 {
-    font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(3rem, 6vw, 5.5rem);
-    font-weight: normal;
+    font-weight: 700;
+    letter-spacing: -0.05em;
     line-height: 0.95;
 }
-
-
-/* =========================
-   PROJECT GRID
-   ========================= */
 
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
+    gap: 0;
 
-    background: var(--teal);
+    border-top: 2px solid var(--teal);
 }
 
-
-/* =========================
-   PROJECT CARDS
-   ========================= */
-
 .project-card {
-    min-height: 400px;
-    padding: 45px;
+    min-height: 390px;
+    padding: 40px;
 
-    background: var(--cream);
     color: var(--teal);
+    background: var(--pink);
+
     text-decoration: none;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
+    border-bottom: 2px solid var(--teal);
+
     transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.project-card:nth-child(even) {
+    border-right: 1px solid var(--teal);
+}
+
+.project-card:nth-child(odd) {
+    border-left: 1px solid var(--teal);
 }
 
 .project-card.featured {
     grid-column: span 2;
 
-    background: var(--teal);
-    color: var(--salmon);
+    border-left: none;
+    border-right: none;
 }
 
 .project-card:hover {
-    background: var(--salmon);
-    color: var(--teal);
+    background: var(--teal);
+    color: var(--pink);
 }
 
-
-/* =========================
-   PROJECT CONTENT
-   ========================= */
-
 .project-number {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 .project-type {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
+    font-weight: 600;
     letter-spacing: 0.12em;
     margin-bottom: 15px;
 }
 
 .project-info h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 3rem;
-    font-weight: normal;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
     line-height: 1;
+
     margin-bottom: 20px;
 }
 
 .project-info > p:not(.project-type) {
-    max-width: 520px;
+    max-width: 550px;
     line-height: 1.7;
     margin-bottom: 25px;
 }
 
 .project-info span {
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
+    font-size: 0.78rem;
+    font-weight: 600;
 }
 
 
-/* =========================
+/* =========================================================
+   PAGE HEADERS
+   ========================================================= */
+
+.page-header {
+    width: 100%;
+    max-width: none;
+
+    background: var(--teal);
+    color: var(--pink);
+
+    padding: 100px max(5%, calc((100vw - 1300px) / 2 + 5%)) 110px;
+}
+
+.page-header h1 {
+    max-width: 1100px;
+
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    line-height: 0.9;
+
+    margin-bottom: 40px;
+}
+
+.page-header h1 span {
+    color: var(--pink);
+}
+
+.page-header > p:not(.eyebrow) {
+    max-width: 650px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.page-header .button {
+    margin-top: 35px;
+}
+
+
+/* =========================================================
+   PROJECTS & RESEARCH
+   ========================================================= */
+
+.project-list {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 5% 130px;
+}
+
+.research-project {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 70px;
+
+    padding: 65px 0;
+
+    border-top: 2px solid var(--teal);
+}
+
+.research-project:last-child {
+    border-bottom: 2px solid var(--teal);
+}
+
+.project-label {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-label span {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.project-label p {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+}
+
+.research-project-content {
+    max-width: 720px;
+}
+
+.research-project-content h2 {
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 1;
+
+    margin-bottom: 15px;
+}
+
+.project-subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+.research-project-content > p:not(.project-subtitle) {
+    max-width: 650px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.text-link {
+    color: var(--teal);
+    text-decoration: none;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    border-bottom: 1px solid var(--teal);
+    padding-bottom: 4px;
+}
+
+
+/* =========================================================
+   CV
+   ========================================================= */
+
+.cv-preview {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 5% 130px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+.cv-category {
+    min-height: 320px;
+    padding: 40px;
+
+    border: 2px solid var(--teal);
+    margin-right: -2px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--pink);
+}
+
+.cv-category > p:first-child {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+
+    margin-bottom: auto;
+}
+
+.cv-category h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+.cv-category > p:last-child {
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PUBLICATIONS & RECOGNITION
+   ========================================================= */
+
+.recognition-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 5% 130px;
+}
+
+.recognition-category {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 70px;
+
+    padding: 60px 0;
+
+    border-top: 2px solid var(--teal);
+}
+
+.recognition-category:last-child {
+    border-bottom: 2px solid var(--teal);
+}
+
+.recognition-category > .eyebrow {
+    margin: 0;
+}
+
+.recognition-category > h2 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.recognition-list {
+    grid-column: 2;
+}
+
+
+/* =========================================================
+   BEYOND RESEARCH
+   ========================================================= */
+
+.interest-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 5% 130px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.interest-card {
+    min-height: 380px;
+    padding: 45px;
+
+    border: 2px solid var(--teal);
+    margin-right: -2px;
+    margin-bottom: -2px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background: var(--pink);
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.interest-card > p:first-child {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+
+    margin-bottom: auto;
+}
+
+.interest-card h2 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+
+    margin-bottom: 20px;
+}
+
+.interest-card > p:last-child {
+    max-width: 500px;
+    line-height: 1.7;
+}
+
+.interest-card:hover {
+    background: var(--teal);
+    color: var(--pink);
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact-page {
+    min-height: 75vh;
+
+    background: var(--teal);
+    color: var(--pink);
+
+    padding: 100px max(5%, calc((100vw - 1300px) / 2 + 5%)) 120px;
+}
+
+.contact-page h1 {
+    font-size: clamp(5rem, 10vw, 9rem);
+    font-weight: 700;
+    letter-spacing: -0.07em;
+    line-height: 0.8;
+
+    margin-bottom: 50px;
+}
+
+.contact-page h1 span {
+    color: var(--pink);
+}
+
+.contact-intro {
+    max-width: 650px;
+
+    font-size: 1.1rem;
+    line-height: 1.8;
+
+    margin-bottom: 70px;
+}
+
+.contact-links {
+    border-top: 2px solid var(--pink);
+}
+
+.contact-links a {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    padding: 30px 0;
+
+    color: var(--pink);
+    text-decoration: none;
+
+    border-bottom: 2px solid var(--pink);
+
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    transition: padding 0.2s ease;
+}
+
+.contact-links a span {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+}
+
+.contact-links a:hover {
+    padding-left: 15px;
+}
+
+
+/* =========================================================
    FOOTER
-   ========================= */
+   ========================================================= */
 
 footer {
-    max-width: 1300px;
-    margin: auto;
+    width: 100%;
 
-    padding: 35px 5%;
+    padding: 35px max(5%, calc((100vw - 1300px) / 2 + 5%));
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    background: var(--pink);
+    color: var(--teal);
+
+    border-top: 2px solid var(--teal);
 
     font-size: 0.8rem;
 }
 
 .footer-links {
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 .footer-links a {
     color: var(--teal);
     text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
-    color: var(--salmon);
+    font-weight: 600;
 }
 
 
-/* =========================
-   TABLET + MOBILE
-   ========================= */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 850px) {
 
-    /* Navigation */
-
     .navbar {
-        padding: 22px 7%;
+        justify-content: center;
+        padding: 20px 5%;
     }
 
     .nav-links {
-        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+    }
+
+    .nav-links a {
+        font-size: 0.7rem;
     }
 
 
-    /* Hero */
-
-    .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-    }
+    /* Home */
 
     .hero-content {
-        min-height: 70vh;
-        padding: 12% 8%;
+        min-height: 65vh;
+        padding: 80px 7%;
     }
 
     .hero h1 {
-        font-size: clamp(3.5rem, 15vw, 6rem);
+        font-size: clamp(4rem, 17vw, 6.5rem);
     }
 
     .hero-description {
@@ -377,58 +692,111 @@ footer {
     }
 
 
-    /* Hero buttons */
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-
-    /* Hero accent */
-
-    .hero-accent {
-        min-height: 300px;
-        padding: 8%;
-    }
-
-    .hero-accent p {
-        font-size: clamp(2.5rem, 11vw, 4rem);
-    }
-
-
     /* Selected work */
 
     .selected-work {
-        padding: 90px 7%;
+        padding: 80px 7% 100px;
     }
-
-    .section-heading {
-        margin-bottom: 45px;
-    }
-
-    .section-heading h2 {
-        font-size: clamp(2.8rem, 12vw, 4.5rem);
-    }
-
-
-    /* Projects */
 
     .project-grid {
         grid-template-columns: 1fr;
     }
 
+    .project-card,
     .project-card.featured {
         grid-column: span 1;
+
+        border-left: none;
+        border-right: none;
+
+        min-height: 330px;
+        padding: 35px 0;
     }
 
-    .project-card {
-        min-height: 350px;
-        padding: 35px;
+
+    /* Page headers */
+
+    .page-header {
+        padding: 80px 7% 90px;
     }
 
-    .project-info h3 {
-        font-size: 2.5rem;
+    .page-header h1 {
+        font-size: clamp(3.5rem, 15vw, 5.5rem);
+    }
+
+
+    /* Projects */
+
+    .project-list {
+        padding: 70px 7% 100px;
+    }
+
+    .research-project {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 50px 0;
+    }
+
+
+    /* CV */
+
+    .cv-preview {
+        padding: 70px 7% 100px;
+        grid-template-columns: 1fr;
+    }
+
+    .cv-category {
+        min-height: 270px;
+        margin-right: 0;
+        margin-bottom: -2px;
+    }
+
+
+    /* Recognition */
+
+    .recognition-section {
+        padding: 70px 7% 100px;
+    }
+
+    .recognition-category {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 50px 0;
+    }
+
+    .recognition-list {
+        grid-column: 1;
+    }
+
+
+    /* Beyond research */
+
+    .interest-grid {
+        padding: 70px 7% 100px;
+        grid-template-columns: 1fr;
+    }
+
+    .interest-card {
+        min-height: 320px;
+        margin-right: 0;
+    }
+
+
+    /* Contact */
+
+    .contact-page {
+        padding: 80px 7% 100px;
+    }
+
+    .contact-page h1 {
+        font-size: clamp(4rem, 20vw, 7rem);
+    }
+
+    .contact-links a {
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        font-size: 1.2rem;
     }
 
 
@@ -441,42 +809,29 @@ footer {
         align-items: flex-start;
         gap: 18px;
     }
-
-    .footer-links {
-        flex-wrap: wrap;
-    }
 }
 
 
-/* =========================
+/* =========================================================
    SMALL MOBILE
-   ========================= */
+   ========================================================= */
 
 @media (max-width: 500px) {
 
-    .hero-content {
-        padding: 15% 8%;
-    }
-
     .hero h1 {
-        line-height: 0.9;
+        letter-spacing: -0.07em;
     }
 
-    .hero-buttons {
-        width: 100%;
-    }
-
-    .button {
-        width: 100%;
-        text-align: center;
-    }
-
-    .project-card {
-        padding: 30px;
+    .section-heading h2 {
+        font-size: 2.8rem;
     }
 
     .project-info h3 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
+    }
+
+    .interest-card {
+        padding: 30px;
     }
 
 }
