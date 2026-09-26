@@ -28,6 +28,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: var(--cream);
     color: var(--teal);
+    line-height: 1.5;
 }
 
 
@@ -50,7 +51,7 @@ header {
 }
 
 .logo {
-    font-family: Georgia, serif;
+    font-family: Georgia, "Times New Roman", serif;
     font-size: 2rem;
     font-weight: bold;
     color: var(--teal);
@@ -60,6 +61,7 @@ header {
 .nav-links {
     display: flex;
     gap: 28px;
+    align-items: center;
 }
 
 .nav-links a {
@@ -67,6 +69,7 @@ header {
     text-decoration: none;
     font-size: 0.85rem;
     letter-spacing: 0.04em;
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -108,7 +111,6 @@ header {
     font-size: clamp(4rem, 8vw, 7.5rem);
     font-weight: normal;
     line-height: 0.85;
-
     margin-bottom: 35px;
 }
 
@@ -141,7 +143,9 @@ header {
 
     border: 2px solid var(--teal);
 
-    transition: 0.2s;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
 }
 
 .primary {
@@ -155,6 +159,7 @@ header {
 
 .secondary {
     color: var(--teal);
+    background: transparent;
 }
 
 .secondary:hover {
@@ -176,12 +181,128 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
+    overflow: hidden;
 }
 
 .hero-accent p {
-    font-family: Georgia, serif;
-    font-size: clamp(2rem, 4vw, 4rem);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 3.3vw, 3.4rem);
     line-height: 1;
+}
+
+
+/* =========================
+   SELECTED WORK
+   ========================= */
+
+.selected-work {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 120px 5%;
+}
+
+
+/* =========================
+   SECTION HEADING
+   ========================= */
+
+.section-heading {
+    margin-bottom: 60px;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: normal;
+    line-height: 0.95;
+}
+
+
+/* =========================
+   PROJECT GRID
+   ========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+
+    background: var(--teal);
+}
+
+
+/* =========================
+   PROJECT CARDS
+   ========================= */
+
+.project-card {
+    min-height: 400px;
+    padding: 45px;
+
+    background: var(--cream);
+    color: var(--teal);
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.project-card.featured {
+    grid-column: span 2;
+
+    background: var(--teal);
+    color: var(--salmon);
+}
+
+.project-card:hover {
+    background: var(--salmon);
+    color: var(--teal);
+}
+
+
+/* =========================
+   PROJECT CONTENT
+   ========================= */
+
+.project-number {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+}
+
+.project-type {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 15px;
+}
+
+.project-info h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 3rem;
+    font-weight: normal;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.project-info > p:not(.project-type) {
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.project-info span {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
 }
 
 
@@ -210,115 +331,152 @@ footer {
 .footer-links a {
     color: var(--teal);
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-/* =========================
-   SELECTED WORK
-   ========================= */
-
-.selected-work {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 120px 5%;
-}
-
-.section-heading {
-    margin-bottom: 60px;
-}
-
-.section-heading h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    font-weight: normal;
-    line-height: 0.95;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    background: var(--teal);
-}
-
-.project-card {
-    min-height: 400px;
-    padding: 45px;
-
-    background: var(--cream);
-    color: var(--teal);
-    text-decoration: none;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    transition: 0.25s ease;
-}
-
-.project-card.featured {
-    grid-column: span 2;
-    background: var(--teal);
+.footer-links a:hover {
     color: var(--salmon);
 }
 
-.project-card:hover {
-    background: var(--salmon);
-    color: var(--teal);
-}
 
-.project-number {
-    font-family: Georgia, serif;
-    font-size: 1.4rem;
-}
-
-.project-type {
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    margin-bottom: 15px;
-}
-
-.project-info h3 {
-    font-family: Georgia, serif;
-    font-size: 3rem;
-    font-weight: normal;
-    margin-bottom: 20px;
-}
-
-.project-info > p:not(.project-type) {
-    max-width: 520px;
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-
-.project-info span {
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-}
 /* =========================
-   MOBILE
+   TABLET + MOBILE
    ========================= */
 
 @media (max-width: 850px) {
+
+    /* Navigation */
+
+    .navbar {
+        padding: 22px 7%;
+    }
 
     .nav-links {
         display: none;
     }
 
+
+    /* Hero */
+
     .hero {
         grid-template-columns: 1fr;
+        min-height: auto;
     }
 
     .hero-content {
         min-height: 70vh;
+        padding: 12% 8%;
     }
 
-    .hero-accent {
-        min-height: 300px;
+    .hero h1 {
+        font-size: clamp(3.5rem, 15vw, 6rem);
     }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+
+    /* Hero buttons */
 
     .hero-buttons {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+
+    /* Hero accent */
+
+    .hero-accent {
+        min-height: 300px;
+        padding: 8%;
+    }
+
+    .hero-accent p {
+        font-size: clamp(2.5rem, 11vw, 4rem);
+    }
+
+
+    /* Selected work */
+
+    .selected-work {
+        padding: 90px 7%;
+    }
+
+    .section-heading {
+        margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(2.8rem, 12vw, 4.5rem);
+    }
+
+
+    /* Projects */
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card.featured {
+        grid-column: span 1;
+    }
+
+    .project-card {
+        min-height: 350px;
+        padding: 35px;
+    }
+
+    .project-info h3 {
+        font-size: 2.5rem;
+    }
+
+
+    /* Footer */
+
+    footer {
+        padding: 30px 7%;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+   ========================= */
+
+@media (max-width: 500px) {
+
+    .hero-content {
+        padding: 15% 8%;
+    }
+
+    .hero h1 {
+        line-height: 0.9;
+    }
+
+    .hero-buttons {
+        width: 100%;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .project-card {
+        padding: 30px;
+    }
+
+    .project-info h3 {
+        font-size: 2.2rem;
     }
 
 }
