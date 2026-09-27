@@ -4,12 +4,15 @@
 
 
 /* =========================================================
-   COLORS
+   COLORS + TYPOGRAPHY
    ========================================================= */
 
 :root {
     --teal: #3d5b59;
     --pink: #fcb5ac;
+
+    --heading-font: "Kalam", "Comic Sans MS", cursive;
+    --body-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 
@@ -30,20 +33,20 @@ html {
 body {
     min-height: 100vh;
 
-    font-family:
-        Helvetica Neue,
-        Helvetica,
-        Arial,
-        sans-serif;
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 1.7;
 
     background: var(--pink);
     color: var(--teal);
-
-    line-height: 1.6;
 }
 
 a {
     color: inherit;
+}
+
+p {
+    line-height: 1.8;
 }
 
 
@@ -60,7 +63,7 @@ header {
     max-width: 1300px;
     margin: 0 auto;
 
-    padding: 24px 5%;
+    padding: 22px 5%;
 
     display: flex;
     justify-content: flex-end;
@@ -70,19 +73,18 @@ header {
 .nav-links {
     display: flex;
     align-items: center;
-
     gap: 30px;
 }
 
 .nav-links a {
     color: var(--pink);
-
     text-decoration: none;
 
+    font-family: var(--body-font);
     font-size: 0.8rem;
     font-weight: 500;
 
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
 
     transition: opacity 0.2s ease;
 }
@@ -109,12 +111,10 @@ header {
 
 .home-hero-inner {
     max-width: 1300px;
-
-    min-height: calc(100vh - 150px);
+    min-height: calc(100vh - 145px);
 
     margin: 0 auto;
-
-    padding: 80px 5% 100px;
+    padding: 70px 5% 90px;
 
     display: flex;
     flex-direction: column;
@@ -123,41 +123,38 @@ header {
 }
 
 .home-hero h1 {
-    font-size: clamp(5rem, 12vw, 11rem);
+    font-family: var(--heading-font);
 
-    font-weight: 600;
+    font-size: clamp(4.5rem, 9vw, 8.5rem);
+    font-weight: 700;
 
-    letter-spacing: -0.07em;
-    line-height: 0.9;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
 
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .home-subheading {
-    max-width: 700px;
+    max-width: 850px;
 
-    margin-bottom: 40px;
+    margin-bottom: 38px;
 
-    font-size: 1.2rem;
+    font-family: var(--body-font);
+    font-size: 1.05rem;
     font-weight: 400;
 
-    line-height: 1.6;
+    line-height: 1.85;
 }
-
-
-/* =========================================================
-   HOME PROJECT LINK
-   ========================================================= */
 
 .hero-link {
     display: inline-block;
 
     color: var(--pink);
-
     text-decoration: none;
 
-    font-size: 1rem;
-    font-weight: 500;
+    font-family: var(--body-font);
+    font-size: 0.95rem;
+    font-weight: 600;
 
     padding-bottom: 5px;
 
@@ -170,12 +167,12 @@ header {
 
 .hero-link:hover {
     opacity: 0.7;
-    padding-left: 8px;
+    padding-left: 7px;
 }
 
 
 /* =========================================================
-   INNER PAGE TITLE
+   PAGE HEADERS
    ========================================================= */
 
 .page-header {
@@ -184,61 +181,52 @@ header {
     background: var(--teal);
     color: var(--pink);
 
-    padding: 55px 5% 65px;
+    padding: 38px 5% 48px;
 }
 
 .page-header-inner {
     max-width: 1300px;
-
     margin: 0 auto;
 }
 
 .page-header h1 {
-    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-family: var(--heading-font);
 
-    font-weight: 600;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 700;
 
-    letter-spacing: -0.055em;
-    line-height: 0.95;
-}
-
-.page-header p {
-    max-width: 700px;
-
-    margin-top: 25px;
-
-    font-size: 1rem;
-    line-height: 1.7;
+    letter-spacing: -0.03em;
+    line-height: 1;
 }
 
 
 /* =========================================================
-   STANDARD PAGE CONTENT
+   STANDARD CONTENT
    ========================================================= */
 
 .page-content {
     max-width: 1300px;
 
     margin: 0 auto;
-
-    padding: 90px 5% 120px;
+    padding: 80px 5% 110px;
 
     background: var(--pink);
 }
 
+.section-title,
+.publication-section > h2,
+.interest-entry > h2 {
+    font-family: var(--heading-font);
 
-/* =========================================================
-   SECTION HEADINGS
-   ========================================================= */
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 700;
+
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
 
 .section-title {
-    font-size: clamp(2rem, 4vw, 3.5rem);
-
-    font-weight: 600;
-
-    letter-spacing: -0.04em;
-
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
 
@@ -246,18 +234,13 @@ header {
    PROJECTS
    ========================================================= */
 
-.projects-section {
-    width: 100%;
-}
-
 .project-entry {
     display: grid;
 
-    grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.7fr);
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.7fr);
+    gap: 65px;
 
-    gap: 70px;
-
-    padding: 70px 0;
+    padding: 65px 0;
 
     border-top: 1px solid var(--teal);
 }
@@ -265,9 +248,6 @@ header {
 .project-entry:last-child {
     border-bottom: 1px solid var(--teal);
 }
-
-
-/* Project image placeholder */
 
 .project-image {
     width: 100%;
@@ -284,10 +264,7 @@ header {
 
 .project-image span {
     font-size: 0.75rem;
-
-    letter-spacing: 0.08em;
-
-    opacity: 0.6;
+    opacity: 0.55;
 }
 
 .project-image img {
@@ -297,39 +274,49 @@ header {
     object-fit: cover;
 }
 
-
-/* Project text */
-
 .project-details h2 {
-    font-size: clamp(2.4rem, 4vw, 4rem);
+    font-family: var(--heading-font);
 
-    font-weight: 600;
+    font-size: clamp(2.3rem, 3.7vw, 3.7rem);
+    font-weight: 700;
 
-    letter-spacing: -0.05em;
+    letter-spacing: -0.025em;
     line-height: 1;
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .project-details p {
-    max-width: 720px;
+    max-width: 780px;
 
-    margin-bottom: 22px;
+    margin-bottom: 24px;
+
+    font-family: var(--body-font);
+    font-size: 1rem;
 
     line-height: 1.8;
 }
 
-.project-details strong {
-    font-weight: 600;
+.role-heading {
+    font-family: var(--heading-font);
+
+    font-size: 1.35rem;
+    font-weight: 700;
+
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
-.project-link {
+.project-link,
+.interest-link {
     display: inline-block;
 
-    margin-top: 10px;
+    margin-top: 8px;
 
+    color: var(--teal);
     text-decoration: none;
 
+    font-family: var(--body-font);
     font-size: 0.85rem;
     font-weight: 600;
 
@@ -342,7 +329,8 @@ header {
         padding-left 0.2s ease;
 }
 
-.project-link:hover {
+.project-link:hover,
+.interest-link:hover {
     opacity: 0.65;
     padding-left: 5px;
 }
@@ -353,17 +341,16 @@ header {
    ========================================================= */
 
 .coursework {
-    margin-top: 120px;
+    margin-top: 110px;
 }
 
 .coursework-entry {
     display: grid;
 
     grid-template-columns: 1fr 2fr;
+    gap: 65px;
 
-    gap: 70px;
-
-    padding: 50px 0;
+    padding: 48px 0;
 
     border-top: 1px solid var(--teal);
 }
@@ -373,16 +360,18 @@ header {
 }
 
 .coursework-entry h3 {
-    font-size: 1.5rem;
+    font-family: var(--heading-font);
 
-    font-weight: 600;
+    font-size: 1.7rem;
+    font-weight: 700;
 
-    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 .coursework-entry p {
-    max-width: 750px;
+    max-width: 780px;
 
+    font-family: var(--body-font);
     line-height: 1.8;
 }
 
@@ -394,9 +383,8 @@ header {
 .cv-download {
     display: inline-block;
 
-    margin-bottom: 80px;
-
-    padding: 13px 22px;
+    margin-bottom: 70px;
+    padding: 12px 21px;
 
     background: var(--teal);
     color: var(--pink);
@@ -417,10 +405,9 @@ header {
     display: grid;
 
     grid-template-columns: minmax(180px, 0.6fr) minmax(0, 2fr);
+    gap: 65px;
 
-    gap: 70px;
-
-    padding: 55px 0;
+    padding: 52px 0;
 
     border-top: 1px solid var(--teal);
 }
@@ -430,26 +417,27 @@ header {
 }
 
 .cv-section > h2 {
-    font-size: 1rem;
+    font-family: var(--heading-font);
 
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
 
-    text-transform: uppercase;
-
-    letter-spacing: 0.08em;
+    line-height: 1.2;
 }
 
 .cv-items {
     display: flex;
     flex-direction: column;
-
-    gap: 45px;
+    gap: 42px;
 }
 
 .cv-item h3 {
-    font-size: 1.3rem;
+    font-family: var(--heading-font);
 
-    font-weight: 600;
+    font-size: 1.45rem;
+    font-weight: 700;
+
+    line-height: 1.3;
 
     margin-bottom: 5px;
 }
@@ -458,26 +446,22 @@ header {
     margin-bottom: 15px;
 
     font-size: 0.9rem;
-
     font-style: italic;
 }
 
 .cv-item p {
-    max-width: 800px;
-
+    max-width: 820px;
     line-height: 1.8;
 }
 
 .cv-item ul {
-    max-width: 800px;
-
+    max-width: 820px;
     padding-left: 20px;
 }
 
 .cv-item li {
-    margin-bottom: 8px;
-
-    line-height: 1.7;
+    margin-bottom: 10px;
+    line-height: 1.75;
 }
 
 
@@ -486,7 +470,7 @@ header {
    ========================================================= */
 
 .publication-section {
-    padding: 65px 0;
+    padding: 60px 0;
 
     border-top: 1px solid var(--teal);
 }
@@ -496,38 +480,33 @@ header {
 }
 
 .publication-section > h2 {
-    margin-bottom: 40px;
-
-    font-size: clamp(2rem, 4vw, 3rem);
-
-    font-weight: 600;
-
-    letter-spacing: -0.04em;
+    margin-bottom: 38px;
 }
 
 .publication-entry {
-    max-width: 850px;
-
-    margin-bottom: 45px;
+    max-width: 880px;
+    margin-bottom: 48px;
 }
 
 .publication-entry h3 {
     margin-bottom: 10px;
 
-    font-size: 1.25rem;
+    font-family: var(--heading-font);
 
-    font-weight: 600;
+    font-size: 1.55rem;
+    font-weight: 700;
+
+    line-height: 1.3;
 }
 
 .publication-entry p {
-    margin-bottom: 10px;
-
+    margin-bottom: 12px;
     line-height: 1.8;
 }
 
 
 /* =========================================================
-   IMAGE CAROUSEL PLACEHOLDER
+   IMAGE CAROUSEL PLACEHOLDERS
    ========================================================= */
 
 .carousel {
@@ -536,7 +515,6 @@ header {
 
 .carousel-image {
     width: 100%;
-
     aspect-ratio: 16 / 9;
 
     background: rgba(61, 91, 89, 0.08);
@@ -548,6 +526,11 @@ header {
     overflow: hidden;
 }
 
+.carousel-image span {
+    font-size: 0.8rem;
+    opacity: 0.55;
+}
+
 .carousel-image img {
     width: 100%;
     height: 100%;
@@ -556,7 +539,7 @@ header {
 }
 
 .carousel-caption {
-    margin-top: 15px;
+    margin-top: 14px;
 
     font-size: 0.9rem;
     line-height: 1.6;
@@ -570,7 +553,9 @@ header {
 .simple-list {
     list-style: none;
 
-    max-width: 850px;
+    max-width: 880px;
+
+    margin-top: 40px;
 }
 
 .simple-list li {
@@ -591,7 +576,7 @@ header {
    ========================================================= */
 
 .interest-entry {
-    padding: 70px 0;
+    padding: 65px 0;
 
     border-top: 1px solid var(--teal);
 }
@@ -600,14 +585,8 @@ header {
     border-bottom: 1px solid var(--teal);
 }
 
-.interest-entry h2 {
-    margin-bottom: 35px;
-
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-
-    font-weight: 600;
-
-    letter-spacing: -0.05em;
+.interest-entry > h2 {
+    margin-bottom: 30px;
 }
 
 .interest-entry .carousel {
@@ -615,9 +594,18 @@ header {
 }
 
 .interest-description {
-    max-width: 750px;
+    max-width: 800px;
 
+    font-size: 1rem;
     line-height: 1.8;
+}
+
+.interest-description + .interest-description {
+    margin-top: 20px;
+}
+
+.interest-link {
+    margin-top: 22px;
 }
 
 
@@ -647,13 +635,12 @@ header {
 
     width: 100%;
 
-    padding: 28px 0;
+    padding: 26px 0;
 
     color: var(--teal);
-
     text-decoration: none;
 
-    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
     font-weight: 500;
 
     transition:
@@ -662,8 +649,7 @@ header {
 }
 
 .contact-list a:hover {
-    padding-left: 10px;
-
+    padding-left: 8px;
     opacity: 0.65;
 }
 
@@ -675,7 +661,7 @@ header {
 footer {
     width: 100%;
 
-    padding: 30px 5%;
+    padding: 28px 5%;
 
     background: var(--pink);
     color: var(--teal);
@@ -683,26 +669,19 @@ footer {
     border-top: 1px solid var(--teal);
 
     display: flex;
-
     justify-content: space-between;
     align-items: center;
 
     font-size: 0.75rem;
 }
 
-footer > * {
-    max-width: 1300px;
-}
-
 .footer-links {
     display: flex;
-
     gap: 20px;
 }
 
 .footer-links a {
     color: var(--teal);
-
     text-decoration: none;
 }
 
@@ -713,17 +692,13 @@ footer > * {
 
 @media (max-width: 850px) {
 
-    /* Navigation */
-
     .navbar {
         justify-content: center;
-
         padding: 18px 6%;
     }
 
     .nav-links {
         justify-content: center;
-
         flex-wrap: wrap;
 
         gap: 10px 18px;
@@ -734,45 +709,42 @@ footer > * {
     }
 
 
-    /* Home */
-
     .home-hero-inner {
-        min-height: calc(100vh - 170px);
+        min-height: calc(100vh - 160px);
 
-        padding: 70px 7% 90px;
+        padding: 65px 7% 80px;
     }
 
     .home-hero h1 {
-        font-size: clamp(4.5rem, 22vw, 8rem);
+        font-size: clamp(4rem, 18vw, 6.5rem);
+        margin-bottom: 25px;
+    }
+
+    .home-subheading {
+        font-size: 0.98rem;
     }
 
 
-    /* Page header */
-
     .page-header {
-        padding: 45px 7% 55px;
+        padding: 32px 7% 40px;
     }
 
     .page-header h1 {
-        font-size: clamp(3rem, 14vw, 5rem);
+        font-size: clamp(2.7rem, 12vw, 4rem);
     }
 
-
-    /* Standard page */
 
     .page-content {
-        padding: 65px 7% 90px;
+        padding: 60px 7% 85px;
     }
 
-
-    /* Projects */
 
     .project-entry {
         grid-template-columns: 1fr;
 
-        gap: 35px;
+        gap: 32px;
 
-        padding: 55px 0;
+        padding: 52px 0;
     }
 
     .project-image {
@@ -780,52 +752,49 @@ footer > * {
     }
 
 
-    /* Coursework */
-
     .coursework {
-        margin-top: 80px;
+        margin-top: 75px;
     }
 
     .coursework-entry {
         grid-template-columns: 1fr;
 
-        gap: 20px;
+        gap: 18px;
 
-        padding: 40px 0;
+        padding: 38px 0;
     }
 
 
-    /* CV */
-
     .cv-download {
-        margin-bottom: 50px;
+        margin-bottom: 45px;
     }
 
     .cv-section {
         grid-template-columns: 1fr;
 
-        gap: 30px;
+        gap: 28px;
 
-        padding: 45px 0;
+        padding: 42px 0;
     }
 
 
-    /* Beyond research */
+    .publication-section {
+        padding: 50px 0;
+    }
+
 
     .interest-entry {
-        padding: 55px 0;
+        padding: 52px 0;
     }
 
 
-    /* Footer */
-
     footer {
-        padding: 25px 7%;
+        padding: 24px 7%;
 
         flex-direction: column;
         align-items: flex-start;
 
-        gap: 15px;
+        gap: 14px;
     }
 }
 
@@ -837,7 +806,7 @@ footer > * {
 @media (max-width: 500px) {
 
     .home-hero h1 {
-        font-size: 4.5rem;
+        font-size: 4rem;
     }
 
     .project-details h2 {
@@ -845,7 +814,6 @@ footer > * {
     }
 
     .contact-list a {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
-
 }
